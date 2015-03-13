@@ -47,13 +47,13 @@ has mooish => (
     default => 1,
 );
 
-=before compile_type_constraint
+=method compile_type_constraint
 
 If L</mooish> is true, we wrap the L</original_constraint> in a sub that translates L<Moo> behaviors
 (die on fail; otherwise success) to L<Moose::Meta::TypeConstraint> expectations (false on fail; true on success).
 
 We stash the original constraint in L</original_constraint> (surprise!),
-and set the L<Moose::Meta::TypeConstraint/constraint|constraint attribute> to
+and set the L<constraint attribute|Moose::Meta::TypeConstraint/constraint> to
 the wrapped constraint.
 
 =cut
@@ -94,7 +94,7 @@ sub _wrap_constraint {
     };
 }
 
-=around create_child_type
+=method create_child_type
 
 Subtypes created here are not mooish, unless an explicit C<mooish => 1> is
 passed.
@@ -118,7 +118,7 @@ __END__
 
     # determining where this goes is left as an exercise for the reader
     with 'MooseX::TraitFor::Meta::TypeConstraint::Mooish';
-    
+
 =head1 SYNOPSIS
 
 This trait implements the functionality described in
