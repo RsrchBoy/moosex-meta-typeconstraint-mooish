@@ -94,6 +94,19 @@ sub _wrap_constraint {
     };
 }
 
+=around create_child_type
+
+Subtypes created here are not mooish, unless an explicit C<mooish => 1> is
+passed.
+
+=cut
+
+around create_child_type => sub {
+    my ($orig, $self) = (shift, shift);
+
+    return $self->$orig(mooish => 0, @_);
+};
+
 !!42;
 __END__
 
