@@ -1,6 +1,6 @@
 package MooseX::Meta::TypeConstraint::Mooish;
 
-# ABSTRACT: The great new MooseX::Meta::TypeConstraint::Mooish!
+# ABSTRACT: Translate Moo-style constraints to Moose-style
 
 use Moose;
 use namespace::autoclean 0.24;
