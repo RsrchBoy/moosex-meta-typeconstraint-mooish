@@ -11,8 +11,10 @@ use aliased 'Moose::Meta::TypeConstraint'                    => 'TypeConstraint'
 use aliased 'MooseX::Meta::TypeConstraint::Mooish'           => 'MooishTC';
 use aliased 'MooseX::TraitFor::Meta::TypeConstraint::Mooish' => 'TraitFor';
 
+my $constraint = sub { die if $_[0] ne '5' };
+
 my $tc = MooishTC->new(
-    constraint => sub { die if $_[0] ne '5' },
+    constraint => $constraint,
 );
 isa_ok $tc, MooishTC;
 ok $tc->has_original_constraint => 'has an original constraint';
