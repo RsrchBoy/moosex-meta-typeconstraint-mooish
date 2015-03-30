@@ -37,6 +37,8 @@ TODO: {
     local $TODO = 'equality fails ATM';
 
     cmp_ok $tc, '==', $tc2;
+    ok $tc->equals($tc2) => '$tc->equals($tc2)';
+    ok $tc2->equals($tc) => '$tc2->equals($tc)';
 }
 
 done_testing;
