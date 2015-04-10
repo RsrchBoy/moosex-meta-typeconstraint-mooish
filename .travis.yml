@@ -1,3 +1,10 @@
+# Travis config for @RsrchBoy's p5 packages.
+#
+# Kinda.
+#
+# GistID: 31e0e356a6233e5ee730
+# Chris Weyl <cweyl@alumni.drew.edu> 2015
+
 # use the docker/container based infrastructure
 sudo: false
 
@@ -20,7 +27,7 @@ branches:
         - "release/cpan"
 
 env:
-    - CPANM_OPTS="-q --skip-satisfied --notest"
+    - CPANM_OPTS="-q --skip-satisfied --notest --no-man-pages"
 
 before_install:
    # git bits sometimes needed...
