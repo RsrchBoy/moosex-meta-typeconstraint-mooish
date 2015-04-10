@@ -18,7 +18,7 @@ pass 'Ready? go!';
 
 my $_test = sub {
     my ($constraint_sub) = @_;
-    
+
     my $tc = MooishTC->new(
         constraint => $constraint_sub,
     );
